@@ -25,6 +25,7 @@ from files_to_load.config_to_load import get_db_session
 
 user_router = APIRouter()
 
+
 oauth2 = OAuth2PasswordBearer(tokenUrl = '/user/login')
 
 def get_user_details(access_token = Depends(oauth2)) -> TokenData:

@@ -1,7 +1,5 @@
-# from graph.main_graph import main_graph
 from utils.tokens_model import TokenData
 from sqlalchemy.orm import Session
-from langgraph.checkpoint.postgres import PostgresSaver
 from uuid import uuid4
 from controller.threads.add_thread import add_thread_controller
 from api_models.call_graph_response import APICallGraphResponse
@@ -10,8 +8,7 @@ from db_models.user_model import User
 from fastapi import HTTPException
 from db_models.feedback_thread_model import Feedback
 
-# from db_connection.db_postgresql_neon import COMPILED_MAIN_GRAPH
-# import db_connection.db_postgresql_neon as db_global_variables
+
 import files_to_load.config_to_load as config_to_load_at_initialization
 
 

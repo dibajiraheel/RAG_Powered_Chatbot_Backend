@@ -7,8 +7,6 @@ from utils.tokens_model import TokenData
 from api_models.response import APIResponse
 
 from langchain_community.document_loaders import PyPDFLoader
-# from langchain_openai import OpenAIEmbeddings
-# from langchain_postgres import PGVector
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain.prompts import ChatPromptTemplate
 from uuid import uuid4

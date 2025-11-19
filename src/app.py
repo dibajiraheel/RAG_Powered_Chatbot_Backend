@@ -1,14 +1,11 @@
 from fastapi import FastAPI
 from routes.user_routes import user_router
-# from db_connection.db import initialize_db
 from routes.document_routes import document_routes
 from routes.graphs_routes import graphs_routes
-# from fastapi.middleware.cors import CORSMiddleware
 from starlette.middleware.cors import CORSMiddleware
 
 
 from contextlib import asynccontextmanager
-from typing import Any, Iterator
 
 import psycopg_pool
 from sqlalchemy import create_engine

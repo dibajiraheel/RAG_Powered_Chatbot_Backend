@@ -1,5 +1,4 @@
 from sqlalchemy.orm import Session
-from fastapi import HTTPException
 from db_models.user_model import User
 from api_models.response import APIResponse
 from utils.bcrypt_password import encrypt_password

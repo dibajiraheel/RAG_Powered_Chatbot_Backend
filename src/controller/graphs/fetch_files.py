@@ -1,4 +1,3 @@
-from fastapi import HTTPException
 from sqlalchemy.orm import Session
 from db_models.user_model import User
 from db_models.file_model import File

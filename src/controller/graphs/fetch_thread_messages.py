@@ -1,6 +1,4 @@
 from sqlalchemy.orm import Session
-# from graph.main_graph import main_graph
-# from langgraph.checkpoint.postgres import PostgresSaver
 from api_models.fetch_thread_messages_response import APIFetchThreadMessagesResponse
 from langchain_core.messages import AIMessage, HumanMessage
 from db_models.user_model import User

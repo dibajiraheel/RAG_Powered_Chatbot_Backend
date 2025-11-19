@@ -7,12 +7,9 @@ from langchain.prompts import ChatPromptTemplate
 from langchain_core.messages import BaseMessage, HumanMessage, AIMessage, RemoveMessage
 
 from langgraph.graph import StateGraph, START, END
-# from langchain_ollama import OllamaEmbeddings
-# from langchain_openai import OpenAIEmbeddings
 from langchain.retrievers import MergerRetriever, ContextualCompressionRetriever
 from langchain.document_transformers import EmbeddingsRedundantFilter, LongContextReorder
 from langchain.retrievers.document_compressors import DocumentCompressorPipeline
-# from langchain_postgres import PGVector
 
 from utils.graph_utils import handle_messages_addition
 

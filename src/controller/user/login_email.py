@@ -5,7 +5,8 @@ from api_models.login import LoginRequest
 from utils.bcrypt_password import verify_password
 from utils.generate_tokens import generate_both_tokens
 from utils.tokens_model import TokenData
-from fastapi import HTTPException
+
+
 
 async def login_using_email_controller(session: Session, userdata: LoginRequest) -> APILoginResponse:
     user_found = session.query(User).filter_by(email = userdata.email).first()
