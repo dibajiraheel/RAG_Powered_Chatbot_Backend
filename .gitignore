@@ -1,0 +1,37 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+.venv/
+env/
+venv/
+
+# --- Security (CRITICAL) ---
+.env
+.env.local
+
+# --- Tool Caches ---
+.uv_cache/
+.ruff_cache/
+.pytest_cache/
+.mypy_cache/
+
+# --- Test Files ---
+worker.py
+add_document_logic.py
+general_graph_old.py
+rag_graph_old.py
+graph.ipynb
+main_graph_old.py
+main_graph_picture.ipynb
+rag.ipynb
+rag.py
+test.ipynb
+add_document_status.py
+add_document_with_redis.py
