@@ -133,6 +133,10 @@ async def add_document_controller(file: UploadFile, userinfo: TokenData, session
             print('DELETING')
             os.remove(temp_file_path)
             print('DELETED')
+            if (os.path.exists(temp_file_path)):
+                print('STILL EXIST')
+            else:
+                print('DO NOT EXIST')
             response = APIResponse(task_completed=True, detail=['added in vector store and file deleted successfully', files_to_send], status_code=200)
             return response
         
