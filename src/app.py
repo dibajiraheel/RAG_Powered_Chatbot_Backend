@@ -73,12 +73,12 @@ async def lifespan(app: FastAPI):
 
 
         # D. Setup LangGraph Checkpointer
-        checkpointer = PostgresSaver(DB_POOL) 
-        checkpointer.setup()
+        config_to_load_at_initialization.POSTGRES_CHECKPOINTER = PostgresSaver(DB_POOL) 
+        config_to_load_at_initialization.POSTGRES_CHECKPOINTER.setup()
         print("✅ LangGraph checkpointer setup complete.")
 
         # E. Compile the graph
-        config_to_load_at_initialization.COMPILED_MAIN_GRAPH = main_graph.compile(checkpointer=checkpointer)
+        config_to_load_at_initialization.COMPILED_MAIN_GRAPH = main_graph.compile(checkpointer=config_to_load_at_initialization.POSTGRES_CHECKPOINTER)
         print("✅ LangGraph compiled and ready.")
 
         # F. Initialize Embedding Models
