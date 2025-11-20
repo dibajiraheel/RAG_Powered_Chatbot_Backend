@@ -129,6 +129,7 @@ async def add_document_controller(file: UploadFile, userinfo: TokenData, session
             files_to_send.append(file_to_send)
 
         print('FILE TO DELETE FROM PATH = ', temp_file_path)
+        print('TOTAL = ', os.listdir(temp_file_directory))
         if (os.path.exists(temp_file_path)):
             print('DELETING')
             os.remove(temp_file_path)
