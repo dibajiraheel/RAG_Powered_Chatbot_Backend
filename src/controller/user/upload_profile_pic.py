@@ -24,7 +24,7 @@ async def upload_profile_pic_controller(session: Session, image: UploadFile, use
             
     temp_file_directory = (str(os.getcwd()) + '/temp_files')
     os.makedirs(temp_file_directory, exist_ok=True)
-    print('OK IMAGE = ', temp_file_directory)
+    # print('OK IMAGE = ', temp_file_directory)
     with tempfile.NamedTemporaryFile(dir = temp_file_directory, suffix='.jpg', delete=False) as temp_file:
         shutil.copyfileobj(image.file, temp_file)
 

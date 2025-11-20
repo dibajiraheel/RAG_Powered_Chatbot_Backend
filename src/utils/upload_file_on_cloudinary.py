@@ -14,15 +14,11 @@ cloudinary.config(
 
 def upload_file_on_cloudinary(file_path: str):
     response = upload(file = file_path, folder = config.cloudinary_profile_pic_folder_path)
-    print('REMOVE = ', file_path)
+    # print('REMOVE = ', file_path)
     if exists(file_path):
-        print('REMOVING = ', file_path)
+        print('REMOVING')
         remove(file_path)
-    
-    if exists(file_path):
-        print('STILL EXIST')
-    else:
-        print('DO NOT EXIST NOW')
+        print('REMOVED')
     return response
 
 
