@@ -140,6 +140,30 @@ app.include_router(user_router, prefix = '/user', tags = ['user routes'])
 app.include_router(document_routes, prefix='/document', tags=['document routes'])
 app.include_router(graphs_routes, prefix='/graphs', tags = ['graphs', 'routes'])
 
+@app.get('/health')
+async def health():
+    # 1. Get SQLAlchemy Pool Status
+    sql_pool = config_to_load_at_initialization.SQLALCHEMY_ENGINE.pool
+    
+    # 2. Get psycopg_pool Status (Requires DB_POOL to be defined globally)
+    global DB_POOL # Ensure you access the global variable
+    
+    if DB_POOL is None:
+        psycopg_status = {"error": "DB_POOL not initialized"}
+    else:
+        psycopg_status = DB_POOL._stats 
+
+    return {
+        "status": "healthy",
+        
+        "sqlalchemy_pool": {
+            "pool_size": sql_pool.size(),
+            "checked_out": sql_pool.checkedout(),
+            "overflow": sql_pool.overflow(),
+        },
+        
+        "psycopg_pool": psycopg_status, # Include the new metrics
+    }
 
 
 

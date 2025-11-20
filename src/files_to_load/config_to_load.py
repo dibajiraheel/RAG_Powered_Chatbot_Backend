@@ -20,9 +20,11 @@ def get_db_session() -> Iterator[Session]:
     if SessionLocal is None:
         raise Exception("Database SessionLocal not initialized. Check application lifespan.")
         
-    db = SessionLocal() 
+    db = SessionLocal()
+    print('NEW CONNECTION OF DB GENERATED') 
     try:
         yield db
     finally:
         db.close()
+        print('DB CONNECTION CLOSED')
 
